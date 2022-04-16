@@ -1,6 +1,15 @@
 # dummy-uber
 test-code for dummy uber
 
+before runnig the app. enter command in your cli.
+$ npm install 
+
+#this will install all the dependencies in the package.json file.
+
+$ node server.js
+
+#it will start the application.
+
 api end points:
 register:  bse_url:3000/api/register
 findCab:  bse_url:3000/api/findCab
