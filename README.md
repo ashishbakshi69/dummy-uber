@@ -11,26 +11,36 @@ $ node server.js
 #it will start the application.
 
 api end points:
-register:  bse_url:3000/api/register
-findCab:  bse_url:3000/api/findCab
-bookCab:  bse_url:3000/api/bookCab
+register:  base_url:3000/api/register
+findCab:  base_url:3000/api/findCab
+bookCab:  base_url:3000/api/bookCab
+changeThreshold: base_url:3000/api/changeThreshold
+
+
 
 register user body
-send these objects as body.
+send these json as body.
 
 Driver:
 {
     "name": "cab driver",
     "cabNumber": "WB051111",
-    "xCo": "123456",
-    "yCo": "987645",
+    "xCo": 123456,
+    "yCo": 987645,
     "userType": "DRIVER"
 }
 
 rider: 
 {
     "name": "cab Rider",
-    "xCo": "123456",
-    "yCo": "987645",
+    "xCo": 123456,
+    "yCo": 987645,
     "userType": "RIDER"
+}
+
+the threshhold is 2 for now.
+to change threshhold send the below json as body
+
+{
+    "threshold": 2
 }

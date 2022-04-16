@@ -1,4 +1,4 @@
-const threshold = 2;
+var threshold = 2;
 
 var cabObjData = {
     cabNumber: '',
@@ -209,6 +209,32 @@ exports.bookCab = async (req, res) => {
             })
         return;
     }
+}
+
+exports.changeThreshold = async (req, res) => {
+    let newValue = req.body.threshold;
+
+    newValue = Number.parseFloat(newValue);
+
+    if (newValue < 0) {
+        res.set('alert', 'changeThreshold.error.negtiveValue')
+            .status(400)
+            .send({
+                message: 'Thershold value cannot be negative.',
+                Data: threshold
+            })
+        return;
+    }
+
+    threshold = newValue;
+
+    res.set('alert', 'changeThreshold.success')
+        .status(200)
+        .send({
+            message: 'Thershold value changed',
+            Data: threshold
+        })
+    return;
 }
 
 

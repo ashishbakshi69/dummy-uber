@@ -12,4 +12,7 @@ module.exports = function (app) {
 
     app.route('/api/bookCab')
     .get(bookingHandlers.bookCab);
+
+    app.route('/api/changeThreshold')
+    .post(bookingHandlers.changeThreshold);
 }
